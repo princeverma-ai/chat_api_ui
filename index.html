@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="buttonGroup">
+      <button class="loginChooser">Login</button>
+      <p>|</p>
+      <button class="signUpChooser activeBackground">SignUp</button>
+    </div>
+
+    <!-- sign up form -->
+    <div class="loginForm">
+      <div class="login-box top-box">
+        <label for="name">Name: </label>
+        <input name="name" required id="name_in">
+      </div>
+      <div class="login-box">
+        <label for="email">Email: </label>
+        <input name="email" required type="email" id="email_in">
+      </div>
+      <div class="login-box">
+        <label for="password">Password: </label>
+        <input name="password" required type="password" id="pass_in">
+      </div>
+      <div class="login-box last-box">
+        <p>Gender:</p>
+        <label for="gender_in_male">Male </label>
+        <input name="gender" type="radio" value="male" id="gender_in_male">
+        <label for="gender_in_female">Female </label>
+        <input name="gender" type="radio" value="male" id="gender_in_female">
+      </div>
+      <div class="submit-box">
+        <button class="submitButton">Submit</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
