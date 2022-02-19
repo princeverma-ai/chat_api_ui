@@ -1,146 +1,144 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .loginForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    width: 60rem;
-    height: 30rem;
+  width: 60rem;
+  height: 30rem;
 
-    border-radius: 10px;
-    border: 2px solid black;
+  border-radius: 10px;
+  border: 2px solid black;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    font-size: 2rem;
-    font-weight: lighter;
+  font-size: 2rem;
+  font-weight: lighter;
 
-    background-color: #fffafb;
+  background-color: #fffafb;
 }
 
 .loginForm .login-box {
-    width: 40rem;
-    height: 4rem;
+  width: 40rem;
+  height: 4rem;
 
-    margin: 0.5rem;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
+  margin: 0.5rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 
-    background: linear-gradient(to right, #fff1e6, #fde2e4, #fad2e1, #f0efeb);
-    border-radius: 20px;
+  background: linear-gradient(to right, #fff1e6, #fde2e4, #fad2e1, #f0efeb);
+  border-radius: 20px;
 }
 
 .submit-box {
-    height: 4rem;
-    width: 20rem;
-    position: relative;
-    background: none;
+  height: 4rem;
+  width: 20rem;
+  position: relative;
+  background: none;
 }
 
 .loginForm .login-box input {
-    height: 2rem;
-    width: 15rem;
+  height: 2rem;
+  width: 15rem;
 
-    padding-left: 0.5rem;
+  padding-left: 0.5rem;
 
-    position: relative;
-    bottom: 0.2rem;
-    border-radius: 5px;
-    border: 1px solid gray;
+  position: relative;
+  bottom: 0.2rem;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 .loginForm .login-box p {
-    display: inline;
-    margin-right: 2rem;
+  display: inline;
+  margin-right: 2rem;
 }
 
 #gender_in_male {
-    width: auto;
-    height: auto;
-    margin-right: 1rem;
+  width: auto;
+  height: auto;
+  margin-right: 1rem;
 }
 #gender_in_female {
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 .submitButton {
-    height: 3rem;
-    width: 6rem;
-    background: white;
+  height: 3rem;
+  width: 6rem;
+  background: white;
 
-    border: 1px solid black;
-    border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 1.2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    box-shadow: 0px 5px 2px black;
+  box-shadow: 0px 5px 2px black;
 
-    transition: 200ms;
+  transition: 200ms;
 }
 
 .submitButton:hover {
-    box-shadow: none;
-    transform: translate(-50%, -40%);
+  box-shadow: none;
+  transform: translate(-50%, -40%);
 }
 
 .color {
-    background-color: #f7ede2;
+  background-color: #f7ede2;
 }
 
 .noneDisplay {
-    display: none;
+  display: none;
 }
 
 .buttonGroup {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: max-content;
-    height: 2rem;
-    z-index: 1;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  height: 2rem;
+  z-index: 1;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .buttonGroup p {
-    font-size: 2rem;
-    margin: 0rem 1rem;
+  font-size: 2rem;
+  margin: 0rem 1rem;
 }
 .buttonGroup button {
-    background: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    height: 3.5rem;
-    width: 8rem;
-    border-radius: 10px;
+  background: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  height: 3.5rem;
+  width: 8rem;
+  border-radius: 10px;
 
-    transition: 100ms transform ease-out;
+  transition: 100ms transform ease-out;
 }
 
 .buttonGroup button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .buttonGroup .activeBackground {
-    background-color: #e2ece9;
+  background-color: #e2ece9;
 }
-
-

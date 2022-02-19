@@ -17,14 +17,14 @@ let signUpData = {};
 //0 = signUp 1=login
 
 //DOM Manipulation--------------------------------------------------------------------------
-loginChooser.addEventListener("click", e => {
+loginChooser.addEventListener("click", (e) => {
   firstBox.classList.add("noneDisplay");
   lastBox.classList.add("noneDisplay");
   submitState = 1;
   loginChooser.classList.add("activeBackground");
   signUpChooseButton.classList.remove("activeBackground");
 });
-signUpChooseButton.addEventListener("click", e => {
+signUpChooseButton.addEventListener("click", (e) => {
   firstBox.classList.remove("noneDisplay");
   lastBox.classList.remove("noneDisplay");
   submitState = 0;
@@ -33,7 +33,7 @@ signUpChooseButton.addEventListener("click", e => {
 });
 
 //Login or Sign up-------------------------------------------------------------------------------------------
-submitButton.addEventListener("click", e => {
+submitButton.addEventListener("click", (e) => {
   submitButton.classList.add("color");
 
   //sign up request
@@ -51,45 +51,20 @@ submitButton.addEventListener("click", e => {
       gender: gender,
     };
     //Request---------------------------------------------------
-    fetch("http://127.0.0.1:8000/", {
-      method: "POST",
-      mode: "no-cors", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(signUpData),
+
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/",
+      data: signUpData,
     })
-      .then(res => {
-        console.log("Got response");
-        return res.json();
+      .then(function (response) {
+        console.log(response);
       })
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err);
+      .catch(function (error) {
+        console.log(error);
       });
+
+    //-----------------------------------------------------------
   } else {
   }
 });
-
-// button.addEventListener("click", (e) => {
-//   fetch("http://127.0.0.1:8000/")
-//     .then((res) => {
-//       console.log("Got response");
-//       return res.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//       heading.innerHTML = "";
-//       for (let userName of data.data.users) {
-//         heading.innerHTML += userName.name + " , ";
-//       }
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
-
