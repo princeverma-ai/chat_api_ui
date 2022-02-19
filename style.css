@@ -90,17 +90,24 @@
   transform: translate(-50%, -50%);
 
   box-shadow: 0px 5px 2px black;
-
-  transition: 200ms;
 }
 
 .submitButton:hover {
+  animation: submit-btn-anim 200ms forwards;
+}
+@keyframes submit-btn-anim {
+  100% {
+    box-shadow: none;
+    transform: translate(-50%, -40%);
+  }
+}
+.submitButtonDownState {
   box-shadow: none;
   transform: translate(-50%, -40%);
 }
 
-.color {
-  background-color: #f7ede2;
+.colorGreen {
+  background-color: #d8f3dc;
 }
 
 .noneDisplay {
@@ -109,7 +116,7 @@
 
 .buttonGroup {
   position: absolute;
-  top: 10%;
+  top: 6%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: max-content;
@@ -141,4 +148,36 @@
 
 .buttonGroup .activeBackground {
   background-color: #e2ece9;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  position: absolute;
+  right: 3rem;
+  bottom: 0.5rem;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
