@@ -12,6 +12,11 @@ const pass_in = document.querySelector("#pass_in");
 const gender_in_male = document.querySelector("#gender_in_male");
 const gender_in_female = document.querySelector("#gender_in_female");
 
+const loginFormDiv = document.querySelector(".loginForm");
+const loginFormBoxes = document.querySelectorAll(".loginForm .login-box");
+const buttonGroup = document.querySelector(".buttonGroup");
+const notificationDiv = document.querySelector(".notificationDiv");
+
 //0 = signUp 1=login
 let submitState = 0;
 
@@ -38,25 +43,35 @@ signUpChooseButton.addEventListener("click", (e) => {
   signUpChooseButton.classList.add("activeBackground");
 });
 
-function gotResponse(s = 0, response) {
+function gotResponse(s = 0, response, notificationMessage) {
   //s=0 means bad response s=1 means good response
 
   requestGoingOn = false; //changing request state
   loader.classList.add("noneDisplay");
   submitButton.classList.remove("submitButtonDownState");
+  notificationDiv.innerHTML = notificationMessage;
 
   if (s === 1) {
     //good response
-    submitButton.classList.add("colorGreen");
 
+    //Dom Manipulation
+    loginFormDiv.classList.add("scaleX");
+    for (let box of loginFormBoxes) {
+      box.classList.add("fadeoutanim");
+    }
+    buttonGroup.classList.add("fadeoutanim");
+    submitButton.classList.add("noneDisplay");
+    notificationDiv.style.backgroundColor = "rgba(125, 241, 57, 0.678)";
     console.log(response);
   } else {
     //bad response
+    notificationDiv.style.backgroundColor = "rgba(255, 207, 210,1)";
     console.log(response);
-    if (submitButton.classList.contains("colorGreen")) {
-      submitButton.classList.remove("colorGreen");
-    }
   }
+  notificationDiv.classList.add("notificationAnimClass");
+  setTimeout(() => {
+    notificationDiv.classList.remove("notificationAnimClass");
+  }, 2000);
 }
 
 //Login or Sign up-------------------------------------------------------------------------------------------
@@ -89,10 +104,10 @@ submitButton.addEventListener("click", (e) => {
       data: signUpData,
     })
       .then(function (response) {
-        gotResponse(1, response);
+        gotResponse(1, response, "SignUp Successfull");
       })
       .catch(function (error) {
-        gotResponse(0, error);
+        gotResponse(0, error, "Invalid credentials");
       });
 
     //-----------------------------------------------------------
@@ -110,10 +125,10 @@ submitButton.addEventListener("click", (e) => {
       data: loginData,
     })
       .then(function (response) {
-        gotResponse(1, response);
+        gotResponse(1, response, "Logged in");
       })
       .catch(function (error) {
-        gotResponse(0, error);
+        gotResponse(0, error, "Incorrect Email or Password ");
       });
     //-----------------------------
   }
