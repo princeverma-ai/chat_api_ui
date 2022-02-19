@@ -1,53 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="outside">
-      <div class="buttonGroup">
-        <button class="loginChooser">Login</button>
-        <p>|</p>
-        <button class="signUpChooser activeBackground">SignUp</button>
-      </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Request</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="outside">
+            <div class="buttonGroup">
+                <button class="loginChooser">Login</button>
+                <p>|</p>
+                <button class="signUpChooser activeBackground">SignUp</button>
+            </div>
 
-      <!-- sign up form -->
-      <div class="loginForm">
-        <div class="login-box top-box">
-          <label for="name">Name: </label>
-          <input name="name" required id="name_in" />
+            <!-- sign up form -->
+            <div class="loginForm">
+                <div class="login-box top-box">
+                    <label for="name">Name: </label>
+                    <input name="name" required id="name_in" />
+                </div>
+                <div class="login-box">
+                    <label for="email">Email: </label>
+                    <input name="email" required type="email" id="email_in" />
+                </div>
+                <div class="login-box">
+                    <label for="password">Password: </label>
+                    <input
+                        name="password"
+                        required
+                        type="password"
+                        id="pass_in"
+                    />
+                </div>
+                <div class="login-box last-box">
+                    <p>Gender:</p>
+                    <label for="gender_in_male">Male </label>
+                    <input
+                        name="gender"
+                        type="radio"
+                        value="male"
+                        id="gender_in_male"
+                    />
+                    <label for="gender_in_female">Female </label>
+                    <input
+                        name="gender"
+                        type="radio"
+                        value="male"
+                        id="gender_in_female"
+                    />
+                </div>
+                <div class="submit-box">
+                    <button class="submitButton">Submit</button>
+                    <div class="loader noneDisplay"></div>
+                </div>
+            </div>
         </div>
-        <div class="login-box">
-          <label for="email">Email: </label>
-          <input name="email" required type="email" id="email_in" />
+
+        <div class="mainPage">
+            <!-- Molik ------------------------------------------------>
+            <div class="box1">
+                <div class="navDiv">
+                    <span>M</span>
+                    <div class="navBtns">
+                        <div class="insidenavBtns">
+                            <button class="newChatBtn">B1</button>
+                            <button class="settingsBtn">B2</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Think for Search bar is going on -->
+                <ul class="knownCharts">
+                    <li>
+                        <p>Prince Verma</p>
+                        <p>12/10/2021</p>
+                    </li>
+                    <li>
+                        <p>Molik singla</p>
+                        <p>11/10/2020</p>
+                    </li>
+                    <li>
+                        <p>Ketan singla</p>
+                        <p>11/10/2020</p>
+                    </li>
+                    <li>
+                        <p>Rishabh</p>
+                        <p>11/10/2020</p>
+                    </li>
+                    <li>
+                        <p>Riddum</p>
+                        <p>11/10/2020</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- Prince +++++++++++++++++++++++++++++++++++++++++++++++++++-->
+            <div class="box2"></div>
+            <!-- Molik ---------------------------------------------------- -->
+            <div class="box3"></div>
         </div>
-        <div class="login-box">
-          <label for="password">Password: </label>
-          <input name="password" required type="password" id="pass_in" />
-        </div>
-        <div class="login-box last-box">
-          <p>Gender:</p>
-          <label for="gender_in_male">Male </label>
-          <input name="gender" type="radio" value="male" id="gender_in_male" />
-          <label for="gender_in_female">Female </label>
-          <input
-            name="gender"
-            type="radio"
-            value="male"
-            id="gender_in_female"
-          />
-        </div>
-        <div class="submit-box">
-          <button class="submitButton">Submit</button>
-          <div class="loader noneDisplay"></div>
-        </div>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>
