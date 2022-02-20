@@ -43,18 +43,18 @@ signUpChooseButton.addEventListener("click", (e) => {
   signUpChooseButton.classList.add("activeBackground");
 });
 
+//Response Handler---------------------------------------------------------------------------
 function gotResponse(s = 0, response, notificationMessage) {
   //s=0 means bad response s=1 means good response
 
   requestGoingOn = false; //changing request state
+
   loader.classList.add("noneDisplay");
   submitButton.classList.remove("submitButtonDownState");
   notificationDiv.innerHTML = notificationMessage;
 
+  //good response
   if (s === 1) {
-    //good response
-
-    //Dom Manipulation
     loginFormDiv.classList.add("scaleX");
     for (let box of loginFormBoxes) {
       box.classList.add("fadeoutanim");
@@ -62,6 +62,7 @@ function gotResponse(s = 0, response, notificationMessage) {
     buttonGroup.classList.add("fadeoutanim");
     submitButton.classList.add("noneDisplay");
     notificationDiv.style.backgroundColor = "rgba(125, 241, 57, 0.678)";
+
     console.log(response);
   } else {
     //bad response

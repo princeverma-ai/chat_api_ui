@@ -142,7 +142,6 @@
   transform: translate(-50%, -40%);
 }
 
-
 .noneDisplay {
   display: none;
 }
@@ -252,93 +251,239 @@
     top: -4rem;
   }
 }
-
-/* MOLIK ----------------------------------------------------------------------------------------------------------- */
-
-.box2 {
-  width: 56vw;
-  height: 100vh;
-  background-color: greenyellow;
-}
-.outside {
+.login {
   background-image: url("./assets/login_back.jpg");
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
-}
-.mainPage {
   display: none;
 }
-.box1 {
+
+/* Main Page ----------------------------------------------------------------------------------------------------------- */
+
+.sideBar {
   height: 100vh;
-  width: 22vw;
-  background-color: white;
+  width: 25vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e2ece9;
+
+  color: #2b2d42;
 }
-.navDiv {
+
+.topBar {
+  width: 100%;
+  height: 10%;
+  background-color: #edf2f4;
+
+  padding: 0rem 1rem;
+
   display: flex;
-  justify-content: space-around;
-  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 }
-.navDiv span {
-  width: 1.8em;
-  background-color: rgb(50, 233, 50);
-  height: 1.8em;
-  border-radius: 50px;
-  /* text-align: center; */
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  font-size: 24px;
+.topBarImage {
+  position: relative;
+  top: 0.1rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
-.navBtns {
-  width: 50%;
+.topBarName {
+  position: relative;
+  margin-left: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+.settingsButton {
+  margin-left: auto;
+  background: none;
 
-  display: flex;
-  justify-content: end;
-  /* background-color: red; */
-  height: 1.7em;
-  box-sizing: border-box;
-  padding-right: 1em;
-}
-.insidenavBtns {
-  width: 50%;
-  /* background-color: yellow; */
-  display: flex;
-  justify-content: space-between;
-  min-width: 65px;
-}
-.insidenavBtns button {
-  width: 2em;
-  border: 1px solid black;
-  border-radius: 4px;
-}
-/* Molik */
-.box3 {
-  height: 100vh;
-  width: 22vw;
-  background-color: red;
+  border: none;
+
+  cursor: pointer;
 }
 
-.navDiv {
+.userModeselector {
+  position: relative;
   width: 100%;
-  height: 9vh;
+  height: 10%;
+  background-color: #f8edeb;
+}
+.userModeButton {
+  position: relative;
+  height: 100%;
+  width: 49%;
+
+  border: none;
+  background: none;
+
+  font-size: 1.4rem;
+
+  cursor: pointer;
+}
+.activeUserMode {
+  background-color: #f8e3df;
+}
+
+.usersList {
+  position: relative;
+  height: max-content;
+  width: 100%;
+}
+
+.userListElement {
+  height: 10vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 0rem 1rem;
+  margin: 0.2rem 0rem;
+  background-color: white;
+}
+
+.userListImage {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+
+  border: 1px solid #ffd6a5;
+  border-radius: 50%;
+
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.chatUsername {
+  position: relative;
+  margin-left: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+}
+
+.lastSeen {
+  position: relative;
+  top: 0.5rem;
+  margin-left: auto;
+
+  color: #ced4da;
+  font-size: 0.9rem;
+}
+
+.chatDiv {
+  position: absolute;
+  top: 0;
+  left: 25vw;
+  height: 100vh;
+  width: 75vw;
+
+  background-color: #edf2fb;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.topChatBar {
+  justify-self: flex-start;
+  position: relative;
+  width: 100%;
+  height: 10%;
+
+  padding: 0rem 2rem;
+
+  background-color: #edf2f4;
+  border-left: 0.5px solid rgb(219, 215, 215);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.accountName {
+  position: relative;
+  margin-left: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+.accountLastSeen {
+  position: relative;
+  right: 1rem;
+  margin-left: auto;
+
+  color: #ced4da;
+  font-size: 1rem;
+}
+.chatBox {
+  position: relative;
+  height: 80%;
+  width: 100%;
+}
+.chatBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  opacity: 0.3;
+  background-image: url("./assets/chat_back.jpg");
+  background-size: contain;
+  background-position: center;
+}
+
+.messageToolBar {
+  justify-self: flex-end;
+  position: relative;
+  height: 10%;
+  width: 100%;
+  padding: 0rem 2rem;
+
   background-color: rgb(240, 242, 245);
-}
-.knownCharts li {
-  width: 100%;
-  height: 8vh;
-  background-color: white;
-  border-bottom: 1px solid rgb(240, 242, 245);
-  box-sizing: border-box;
-  padding-left: 2em;
-  display: grid;
-  grid-template-rows: 1.2fr 1fr;
+
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
-.knownCharts li p:nth-of-type(2) {
-  color: rgb(136, 136, 136);
-  font-size: 12px;
-  align-self: flex-start;
+.messageIcon {
+  justify-self: flex-start;
+  margin: 0rem 1rem;
+}
+
+#messageInput {
+  position: relative;
+  height: 60%;
+  width: 70%;
+
+  padding: 0rem 1rem;
+  margin: 0rem 1rem;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+.sendMessageButton {
+  position: relative;
+  width: 6rem;
+  height: 2.5rem;
+
+  border: none;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, #ffcfd2, #f1c0e8, #cfbaf0);
+
+  font-size: 1.3rem;
+
+  cursor: pointer;
+}
+.sendMessageButton svg {
+  position: relative;
+  top: 0.1rem;
 }
