@@ -260,9 +260,18 @@ input:focus, textarea:focus, select:focus{
   background-position: center;
   width: 100vw;
   height: 100vh;
-  display: none;
 }
-
+.mainPageFadein{
+  animation: mainPageAnim 600ms ease-out  forwards ;
+}
+@keyframes mainPageAnim {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 /* Main Page ----------------------------------------------------------------------------------------------------------- */
 
 .sideBar {

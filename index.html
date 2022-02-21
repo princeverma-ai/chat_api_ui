@@ -13,7 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -60,7 +63,7 @@
     </div>
 
     <!-- MainPage ------------------------------------------------>
-    <div class="mainPage">
+    <div class="mainPage" style="display: none">
       <!-- sideBar -->
       <div class="sideBar">
         <div class="topBar">
@@ -80,7 +83,7 @@
               />
             </svg>
           </div>
-          <p class="topBarName">Prince Verma</p>
+          <p class="topBarName">Name Here</p>
           <button class="settingsButton">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -107,35 +110,35 @@
 
         <ul class="usersList">
           <li class="userListElement">
-            <div class="userListImage">M</div>
-            <p class="chatUsername">Molik</p>
-            <p class="lastSeen">4:30 pm</p>
+            <div class="userListImage">U</div>
+            <p class="chatUsername">User</p>
+            <p class="lastSeen">0:00</p>
           </li>
           <li class="userListElement">
-            <div class="userListImage">R</div>
-            <p class="chatUsername">Riddum</p>
-            <p class="lastSeen">11/01/2002</p>
+            <div class="userListImage">U</div>
+            <p class="chatUsername">User</p>
+            <p class="lastSeen">0:00</p>
           </li>
           <li class="userListElement">
-            <div class="userListImage">R</div>
-            <p class="chatUsername">Ramu</p>
-            <p class="lastSeen">5:23 pm</p>
+            <div class="userListImage">U</div>
+            <p class="chatUsername">User</p>
+            <p class="lastSeen">0:00</p>
           </li>
           <li class="userListElement">
-            <div class="userListImage">S</div>
-            <p class="chatUsername">Shubam</p>
-            <p class="lastSeen">3:40 pm</p>
+            <div class="userListImage">U</div>
+            <p class="chatUsername">User</p>
+            <p class="lastSeen">0:00</p>
           </li>
           <li class="userListElement">
-            <div class="userListImage">D</div>
-            <p class="chatUsername">Dhruv</p>
-            <p class="lastSeen">2/11/2021</p>
+            <div class="userListImage">U</div>
+            <p class="chatUsername">User</p>
+            <p class="lastSeen">0:00</p>
           </li>
         </ul>
       </div>
       <!-- sideBar -->
 
-      <div class="chatDiv">
+      <div class="chatDiv" style="display: none">
         <div class="topChatBar">
           <div class="accountImage">
             <svg
@@ -154,12 +157,11 @@
           <p class="accountName">Molik Singla</p>
           <p class="accountLastSeen">5:20 pm</p>
         </div>
-        
+
         <!-- chatBox -->
         <div class="chatBox">
+          <!-- <div class="dateDiv"><p class="dateBox">12/11/2021</p></div>
 
-          <div class="dateDiv"><p class="dateBox">12/11/2021</p></div>
-          
           <div class="sentMessageDiv">
             <p class="sentMessageBox">Hey there</p>
           </div>
@@ -176,8 +178,7 @@
             <p class="sentMessageBox">What about you?</p>
           </div>
 
-          <div class="dateDiv"><p class="dateBox">13/11/2021</p></div>
-
+          <div class="dateDiv"><p class="dateBox">13/11/2021</p></div> -->
         </div>
         <!-- chatBox -->
 
@@ -199,10 +200,25 @@
               />
             </svg>
           </div>
-          <input type="text" name="messageInput" placeholder="Type Something Here..." id="messageInput" />
-          <button class="sendMessageButton">Send
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
-              <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+          <input
+            type="text"
+            name="messageInput"
+            placeholder="Type Something Here..."
+            id="messageInput"
+          />
+          <button class="sendMessageButton">
+            Send
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-send"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+              />
             </svg>
           </button>
         </div>
@@ -210,6 +226,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
+    <script src="requestHandlers.js"></script>
+    <script src="loginLogic.js"></script>
+    <script src="chatLogic.js"></script>
   </body>
 </html>
