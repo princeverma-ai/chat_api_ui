@@ -34,12 +34,27 @@ async function loginRequest(data) {
   }
 }
 //----------------------------------------------------------------------
-async function getChat(currentUserID, otherUserID) {
+async function getChat(chatID) {
   try {
-    const res = await axios.get(
-      `http://127.0.0.1:8000/chat/${currentUserID}/${otherUserID}`
-    );
+    const res = await axios.get(`http://127.0.0.1:8000/chat/${chatID}`);
     return res;
+  } catch (err) {
+    throw new Error(err);
+  }
+}
+//----------------------------------------------------------------------
+
+async function createChat(firstMemberID, secondMemberID) {
+  try {
+    let response = await axios({
+      method: "post",
+      url: "http://127.0.0.1:8000/chat/",
+      data: {
+        chatMembers: [firstMemberID, secondMemberID],
+        messages: [],
+      },
+    });
+    return response;
   } catch (err) {
     throw new Error(err);
   }

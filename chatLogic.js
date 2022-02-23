@@ -42,22 +42,66 @@ function loadChatScreen(response) {
   getAllUsersRequest()
     .then((res) => {
       allusersArray = res.data.data.users;
-      allusersArray.forEach((element) => {
+      //removing self from all users list
+      for (var i = 0; i < allusersArray.length; i++) {
+        if (allusersArray[i]._id === currentUser._id) {
+          allusersArray.splice(i, 1);
+        }
+      }
+      for (let element of allusersArray) {
         let lastSeenDate = new Date(element.lastSeen);
         userListString += `<li class="userListElement">
       <div class="userListImage">${element.name[0].toUpperCase()}</div>
       <p class="chatUsername">${element.name}</p>
       <p class="lastSeen">${lastSeenDate.getDate()}-${lastSeenDate.getMonth()}-${lastSeenDate.getFullYear()}</p>
       </li>`;
-      });
+      }
       usersList.innerHTML = userListString;
     })
     .catch((err) => err);
 }
 
 usersList.addEventListener("click", (e) => {
-  let clickedIndex=getIndex(e.target)
-  getChat(currentUser._id,allusersArray[clickedIndex]._id).then(response=>{
-    console.log(response)
-  })
+  let clickedIndex = getIndex(e.target);
+  let chatExistFlag1 = false,
+    chatExistFlag2 = false;
+  let chatID;
+  for (let chatMemberUser of currentUser.chatMembers) {
+    if (chatMemberUser[0] == allusersArray[clickedIndex].name) {
+      chatExistFlag1 = true;
+    }
+  }
+  for (let chatMemberother of allusersArray[clickedIndex].chatMembers) {
+    if (chatMemberother[0] == currentUser.name) {
+      chatExistFlag2 = true;
+      chatID = chatMemberother[1];
+    }
+  }
+  if (chatExistFlag1 && chatExistFlag2) {
+    console.log("get");
+    getChat(chatID)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    console.log("create");
+    createChat(currentUser._id, allusersArray[clickedIndex]._id)
+      .then((res) => {
+        console.log(res);
+        currentUser.chatMembers.push([
+          allusersArray[clickedIndex].name,
+          res.data.chat._id,
+        ]);
+        allusersArray[clickedIndex].chatMembers.push([
+          currentUser.name,
+          res.data.chat._id,
+        ]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 });
